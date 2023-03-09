@@ -1,0 +1,17 @@
+table, th, td {
+    border: 1px solid black;
+    margin-left: 40px;
+  }
+  
+  
+
+  table, th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+  margin-right: 200px;
+  }
+  
+ 
+

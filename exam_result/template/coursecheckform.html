@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+
+{% block title%}
+    Home   
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>course Cheak</h3>
+    <form action="{% url 'courseregister' %}" method="post">
+        {% csrf_token %}
+    <div class="mb-3 my-5">
+        <label for="enrollmentno" class="form-label">Enrollment Number</label>
+        <input type="text" class="form-control" name="enrollmentno" id="enrollmentno">
+    </div>
+    <div class="mb-3 my-5">
+        <label for="semes" class="form-label">Semester</label>
+        <input type="number" class="form-control" name="semes" id="semes">
+    </div>
+    <div class="mb-3 my-5">
+        <label for="branch" class="form-label">Branch</label>
+        <input type="text" class="form-control" name="branch" id="branch">
+    </div>
+    <div class="mb-3">
+        <input type="submit" value="See Result" class="btn btn-success"/>
+    </div>
+    </form>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,99 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>Add Attendance</h3>
+    <form action="{% url 'add_timetableconform' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Branch Name</label>
+            <input type="text" class="form-control" name="bran">
+        </div>
+        <div class="mb-3">
+            <label for="roll-no" class="form-label">Semester</label>
+            <input type="text" class="form-control" name="semes" >
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject1</label>
+            <input type="text" class="form-control" name="subject1">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject2</label>
+            <input type="text" class="form-control" name="subject2">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject3</label>
+            <input type="text" class="form-control" name="subject3">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject4</label>
+            <input type="text" class="form-control" name="subject4">
+        </div><div class="mb-3">
+            <label for="seubj" class="form-label">Subject5</label>
+            <input type="text" class="form-control" name="subject5">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject6</label>
+            <input type="text" class="form-control" name="subject6">
+        </div>
+        
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject7</label>
+            <input type="text" class="form-control" name="subject7">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject8</label>
+            <input type="text" class="form-control" name="subject8">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject9</label>
+            <input type="text" class="form-control"  name="subject9">
+        </div>
+        <div class="mb-3">
+            <label for="seubj" class="form-label">Subject10</label>
+            <input type="text" class="form-control"  name="subject10">
+        </div>
+        <div class="mb-3">
+            <label for="timing" class="form-label">Time1</label>
+            <input type="text" class="form-control"  name="tim1">
+        </div>
+        <div class="mb-3">
+            <label for="timing" class="form-label">Time2</label>
+            <input type="text" class="form-control"  name="tim2">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Tim3</label>
+            <input type="text" class="form-control"  name="tim3">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time4</label>
+            <input type="text" class="form-control"  name="tim4">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time5</label>
+            <input type="text" class="form-control"  name="tim5">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time6</label>
+            <input type="text" class="form-control"  name="tim6">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time7</label>
+            <input type="text" class="form-control"  name="tim7">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time8</label>
+            <input type="text" class="form-control"  name="tim8">
+        </div> <div class="mb-3">
+            <label for="timing" class="form-label">Time9</label>
+            <input type="text" class="form-control"  name="tim9">
+        </div>
+    </div> <div class="mb-3">
+        <label for="timing" class="form-label">Time10</label>
+        <input type="text" class="form-control"  name="tim10">
+ 
+    </div>
+        <input type="submit" class="form-control btn btn-success" value="Add">
+
+   </div>
+</form>
+
+{% endblock %}

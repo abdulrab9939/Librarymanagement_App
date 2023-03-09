@@ -1,0 +1,30 @@
+{% extends 'navbar.html' %}
+
+
+{% block title%}
+    Result
+{% endblock %}
+
+{% block body %}
+<table class="table my-4">
+    <thead>
+        <tr>
+            <th scope="col">Roll No</th>
+            <th scope="col">Name</th>
+            <th scope="col">total</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{arollno}}</th>
+            <td>{{aname}}</td>
+            <td>{{atotal}}</td>
+           
+            |<a href="#" ><i class="fa fa-print fa-1x"></i></a>
+
+        </tr>
+
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+
+
+{% block title%}
+    Result
+{% endblock %}
+
+{% block body %}
+<table class="table my-4">
+    <thead>
+        <tr>
+            <th scope="col">Roll No</th>
+            <th scope="col">Name</th>
+            <th scope="col">total</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{arollno}}</th>
+            <td>{{aname}}</td>
+            <td>{{atotal}}</td>
+            {% if status == 'Pass' %}
+                <td><p class="btn btn-success">{{status}}</p></td>
+            {% else %}
+            <td><p class="btn btn-danger">{{status}}</p></td>
+            {% endif %}
+
+        </tr>
+
+    </tbody>
+</table>
+{% endblock %}

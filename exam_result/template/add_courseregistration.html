@@ -1,0 +1,189 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>Add Student</h3>
+    <form action="{% url 'add_courseconform' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="stud" class="form-label">studname</label>
+            <input type="text" class="form-control" name="stud">
+        </div>
+       
+        <div class="mb-3">
+            <label for="fname" class="form-label">fathername</label>
+            <input type="text" class="form-control" name="fname" >
+        </div>
+        <div class="mb-3">
+            <label for="enrollm" class="form-label">Enrollment NO</label>
+            <input type="text" class="form-control" name="enrollm">
+        </div>
+        <div class="mb-3">
+            <label for="dateofb" class="form-label">datob</label>
+            <input type="date" class="form-control" name="dateofb">
+        </div>
+        <div class="mb-3">
+            <label for="bra" class="form-label">branch</label>
+            <input type="text" class="form-control" name="bra">
+        </div>
+        <div class="mb-3">
+            <label for="semest" class="form-label">Semester</label>
+            <input type="number" class="form-control" name="semest">
+        </div>
+        <div class="mb-3">
+            <label for="rol" class=" form-label">Roll NO</label>
+            <input type="number" class="form-control" name="rol">
+
+        </div>
+        <!-------------------------------sdkfslf-->
+        <div class="mb-3">
+            <label for="pac1" class=" form-label">Subject  C 1</label>
+            <input type="text" class="form-control" name="pac1">
+
+        </div>
+        <div class="mb-3">
+            <label for="pac2" class=" form-label">Subject C 2</label>
+            <input type="text" class="form-control" name="pac2">
+
+        </div>
+        <div class="mb-3">
+            <label for="pac3" class=" form-label">Subject C 3</label>
+            <input type="text" class="form-control" name="pac3">
+
+        </div><div class="mb-3">
+            <label for="pac4" class=" form-label">Subject C 4</label>
+            <input type="text" class="form-control" name="pac4">
+
+        </div><div class="mb-3">
+            <label for="pac5" class=" form-label">Subject C 5</label>
+            <input type="text" class="form-control" name="pac5">
+
+        </div><div class="mb-3">
+            <label for="pac6" class=" form-label">Subject C 6</label>
+            <input type="text" class="form-control" name="pac6">
+
+        </div><div class="mb-3">
+            <label for="pac7" class=" form-label">Subject  C 7</label>
+            <input type="text" class="form-control" name="pac7">
+
+        </div><div class="mb-3">
+            <label for="pac8" class=" form-label">Subject C 8</label>
+            <input type="text" class="form-control" name="pac8">
+
+        </div><div class="mb-3">
+            <label for="pac9" class=" form-label">Subject C 9</label>
+            <input type="text" class="form-control" name="pac9">
+
+        </div><div class="mb-3">
+            <label for="pac10" class=" form-label">Subject C 10</label>
+            <input type="text" class="form-control" name="pac10">
+
+        </div><div class="mb-3">
+            <label for="pac11" class=" form-label">Subject C 11</label>
+            <input type="text" class="form-control" name="pac11">
+
+        </div><div class="mb-3">
+            <label for="pac12" class=" form-label">Subject C 12</label>
+            <input type="text" class="form-control" name="pac12">
+
+        </div><div class="mb-3">
+            <label for="pac13" class=" form-label">Subject C 13</label>
+            <input type="text" class="form-control" name="pac13">
+
+        </div><div class="mb-3">
+            <label for="pac14" class=" form-label">Subject C 14</label>
+            <input type="text" class="form-control" name="pac14">
+
+        </div><div class="mb-3">
+            <label for="pac15" class=" form-label">Subject C 15</label>
+            <input type="text" class="form-control" name="pac15">
+<!-----------title-->
+        </div>
+        <div class="mb-3">
+            <label for="pat1" class=" form-label">Subject/title 1</label>
+            <input type="text" class="form-control" name="pat1">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat2" class=" form-label">Subject/title 2</label>
+            <input type="text" class="form-control" name="pat2">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat3" class=" form-label"> Subject/title 3</label>
+            <input type="text" class="form-control" name="pat3">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat4" class=" form-label">Subject/title 4</label>
+            <input type="text" class="form-control" name="pat4">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat5" class=" form-label">Subject/title 5</label>
+            <input type="text" class="form-control" name="pat5">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat6" class=" form-label">Subject/title 6</label>
+            <input type="text" class="form-control" name="pat6">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat7" class=" form-label">Subject/title 7</label>
+            <input type="text" class="form-control" name="pat7">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat8" class=" form-label">Subject/title 8</label>
+            <input type="text" class="form-control" name="pat8">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat9" class=" form-label">Subject/title 9</label>
+            <input type="text" class="form-control" name="pat9">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat10" class=" form-label">Subject/title 10</label>
+            <input type="text" class="form-control" name="pat10">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat11" class=" form-label">Subject/title 11</label>
+            <input type="text" class="form-control" name="pat11">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat12" class=" form-label">Subject/title 12</label>
+            <input type="text" class="form-control" name="pat12">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat13" class=" form-label">Subject/title 13</label>
+            <input type="text" class="form-control" name="pat13">
+
+        </div>
+        <div class="mb-3">
+            <label for="pat14" class=" form-label">Subject/title 14</label>
+            <input type="text" class="form-control" name="pat14">
+
+        </div>
+
+        <div class="mb-3">
+            <label for="pat15" class=" form-label">Subject/title 15</label>
+            <input type="text" class="form-control" name="pat15">
+
+        </div>
+
+      
+
+        <input type="submit" class="form-control btn btn-success" value="Add">
+
+    </form>
+</div>
+{% endblock %}

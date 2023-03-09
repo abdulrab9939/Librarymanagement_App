@@ -1,0 +1,63 @@
+{% extends 'navbar.html' %}
+{% block body %}
+{% load static %}
+<div class="container">
+    <h2 style="margin-top:20px" align="center">Send Feedback</h2><hr>
+
+<div class="container-fluid" style="width:70%;margin-top:10%">
+<form method="post" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- <div class="form-group col-md-6">
+      <label for="inputEmail4">Date</label>
+      <input type="text" class="form-control"  name="dat" value="{{date1}}" id="inputEmail4" readonly>
+    </div> -->
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Date</label>
+      <input type="text" class="form-control"  name="dat" value="{{date1}}" id="inputEmail4" readonly>
+    </div>
+    <div class="row">
+      
+      <div class="col-md-6">
+        <label for="">Full Name</label>
+        <input type="text" name="" value="  {{pro.user.first_name}} {{pro.user.last_name}}" id="">
+      </div>
+  </div>
+    <div class="form-row">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Username</label>
+           <input type="text" class="form-control" value="{{request.user.username}}"  name="nam" >
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enrollment</label>
+              <input class="form-control" value="{{pro.en}}" name="enrolm" >
+            </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Contact</label>
+        <input type="number"  class="form-control" value="{{pro.contact}}" name="conta" rows="3">
+      </div>
+  </div>
+    <div class="form-row">
+    
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">email</label>
+        <input type="email" class="form-control" value="{{user.email}}"  name="emailme">
+      </div>
+    </div>
+
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Description</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+
+{% if error %}
+<script>
+    alert('Send feedback Successfully');
+</script>
+{% endif %}
+
+{% endblock %}

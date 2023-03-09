@@ -1,0 +1,26 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>Add maek</h3>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Rol Number</label>
+            <input type="text" class="form-control" name="rol">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">Total</label>
+            <input type="number" class="form-control" name="atttotal">
+        </div>
+        
+
+        <input type="submit" class="form-control btn btn-success" value="Add">
+
+    </form>
+</div>
+{% endblock %}

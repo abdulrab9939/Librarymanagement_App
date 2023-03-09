@@ -1,0 +1,49 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>Add Feepayment</h3>
+    <form action="{% url 'add_fepaymentconform' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="hindi" class="form-label">Student Name</label>
+            <input type="text" class="form-control" name="namee">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">Branch</label>
+            <input type="text" class="form-control" name="course">
+        </div>
+        <!-- <div class="mb-3">
+            <label for="hindi" class="form-label">Enrollment</label>
+            <input type="text" class="form-control" name="enr">
+        </div> -->
+        <div class="mb-3">
+            <label for="hindi" class="form-label">isuufeedate</label>
+            <input type="date" class="form-control" name="fedate">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">feexpairedate</label>
+            <input type="date" class="form-control" name="fexdate">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">dob</label>
+            <input type="date" class="form-control" name="dob">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">Total fee</label>
+            <input type="number" class="form-control" name="totalfee">
+        </div>
+        <div class="mb-3">
+            <label for="hindi" class="form-label">UPI ID</label>
+            <input type="number" class="form-control" name="upi">
+        </div>
+        
+        <input type="submit" class="form-control btn btn-success" value="Add">
+
+    </form>
+</div>
+{% endblock %}

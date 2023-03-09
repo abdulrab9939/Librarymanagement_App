@@ -1,0 +1,66 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+Add Student
+{% endblock %}
+
+{% block body %}
+<div class="container w-25">
+    <h3>Add Student</h3>
+    <form action="{% url 'add_admitcardconfirm' %}" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="enrolno" class="form-label">Enrollment no</label>
+            <input type="text" class="form-control" name="enrolno">
+        </div>
+        <div class="mb-3">
+            <label for="st_name" class="form-label">Student Name</label>
+            <input type="text" class="form-control" name="st_name">
+        </div>
+        <div class="mb-3">
+            <label for="faname" class="form-label">Father Name</label>
+            <input type="text" class="form-control" name="faname" >
+        </div>
+        <div class="mb-3">
+            <label for="add" class="form-label">Address</label>
+            <input type="text" class="form-control" name="add">
+        </div>
+        <div class="mb-3">
+            <label for="course" class="form-label">Course</label>
+            <input type="text" class="form-control" name="course">
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">DOB</label>
+            <input type="date" class="form-control" name="dob">
+        </div>
+        <div class="mb-3">
+            <label for="gender" form-label>Gender</label>
+            <input type="text" class="form-control" name="gender">
+
+        </div>
+        <div class="mb-3">
+            <label for="exvenue" form-label>Exam venue</label>
+            <input type="text" class="form-control" name="exvenue">
+
+        </div>
+        <div class="mb-3">
+            <label for="sub" form-label>Subject</label>
+            <input type="text" class="form-control" name="sub">
+
+        </div>
+        <div class="mb-3">
+            <label for="exdate" form-label>Exam date</label>
+            <input type="date" class="form-control" name="asd">
+
+        </div>
+        <div class="mb-3">
+            <label for=" sno" form-label>S.no</label>
+            <input type="number" class="form-control" name="sno">
+
+        </div>
+
+        <input type="submit" class="form-control btn btn-success" value="Add">
+
+    </form>
+</div>
+{% endblock %}

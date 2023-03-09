@@ -1,0 +1,411 @@
+{% extends 'navbar.html' %}
+
+{% block title%}
+    Admin Panel    
+{% endblock %}
+
+{% block body %}
+<div class="containe" style="width: 97%;">
+
+ <table class="table table-primary my-4 table-hover">
+    
+    <div class="container-fluid my-3">
+        <a href="{% url 'add_student' %}" class="btn btn-warning">Add Student</a>
+    </div>
+    
+    <thead>
+        <tr>
+            <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Student Mark</td>
+         </tr>
+        <form action="/search" method="POST">
+            {% csrf_token %}
+            </td><td><input name="name"></td>
+            <td><button type="submit">Search</button></td></tr>
+        </form>
+        
+        <tr>
+            <th scope="col">Semester</th>
+            <th scope="col">Roll No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Hindi</th>
+            <th scope="col">English</th>
+            <th scope="col">Maths</th>
+            <th scope="col">Science</th>
+            <th scope="col">Total Marks</th>
+            <th scope="col">Precentage</th>
+            <th scope="col">Operations</th>
+
+        </tr>
+    </thead>
+    <tbody>
+       
+        {% for s in students %}
+        <tr>
+            <th scope="row">{{s.sem}}</th>
+            <th scope="row">{{s.roll_no}}</th>
+            <td>{{s.name}}</td>
+            <td>{{s.hindi}}</td>
+            <td>{{s.english}}</td>
+            <td>{{s.maths}}</td>
+            <td>{{s.science}}</td>        
+            <td>{{s.total}}</td>
+            <td>{{s.perecent}}</td>
+            <td>
+
+
+                <a href="{% url 'edit-student' s.id %}" class="btn btn-small btn-primary" id='{s.id}'>Edit</a>
+
+
+                <a href="{% url 'delete-student' s.id %}" class="btn btn-small btn-danger" id='{s.id}'>Delete</a>
+
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>  
+ </table>
+ <hr>
+  <div class="container-fluid my-3">
+    <a href="{% url 'add_attendance' %}" class="btn btn-warning">Add Attendance</a>
+ </div>
+
+ <table class="table table-primary my-4 table-hover">
+   
+   
+    <thead>
+        <tr>
+            <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Attendance</td>
+         </tr>
+        <tr>
+            <th scope="col">Roll No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Attendance</th>
+            <th scope="col">Status</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in attend %}
+        <tr>
+            <th scope="row">{{t.arollno}}</th>
+            <td>{{t.aname}}</td>
+            <td>{{t.total}}</td>
+            <td>
+
+            <a href="{% url 'delete-stuattend' t.id %}" class="btn btn-small btn-danger" id='{t.id}'>Delete</a>
+
+             </td>
+       </tr>
+        {% endfor %}
+    </tbody>
+ </table>
+ <hr>
+
+  <hr>
+
+
+ <div class="container-fluid my-3">
+    <a href="{% url 'add_admit' %}" class="btn btn-warning">Admit</a>
+ </div>
+ <hr>
+  <table class="table table-primary my-4 table-hover">
+   
+    <thead>
+        <tr>
+            <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Admit Card</td>
+         </tr>
+        <tr>
+            <th scope="col">Enrollment</th>
+            <th scope="col">Name</th>
+            <th scope="col">Father Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Address</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Gender</th>
+            <th scope="col">ExamCenter</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Examdate</th>
+           
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in admitc %} 
+        <tr>
+            <th scope="row">{{a.enroll}}</th>
+            <td>{{a.stname}}</td>
+            <td>{{a.f_name}}</td>
+
+            <td>{{a.course}}</td>
+            <td>{{a.add}}</td>
+            <td>{{a.dob}}</td>
+            <!-- <td>{{a.add}}</td> -->
+            <td>{{a.gender}}</td>
+       <td>{{a.exvenue}}</td>
+            
+            <td>{{a.sub}}</td>
+            
+            <td>{{a.exdate}}</td>
+
+
+            <td>
+
+
+             </td>
+       </tr>
+        {% endfor %}
+    </tbody>
+
+    
+</table>
+<br>
+<hr>
+<div class="cours" style="width: 97%;">
+
+<table width="50%">
+<div class="container-fluid my-3">
+    <a href="{% url 'add_courseregistration' %}" class="btn btn-warning">Add Student</a>
+</div>
+
+<thead>
+    <tr>
+        <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Course Resgistration</td>
+     </tr>
+    
+    <tr>
+        <h1 style="color: red; font-style: inherit; text-align: center;">Semester</h1><hr>
+            <th scope="col">studname</th>
+            <th scope="col">fathername </th>
+            <th scope="col">enrollmentno</th>
+            <th scope="col">datob</th>
+            <th scope="col">rollno</th>
+            <th scope="col">branch</th>
+            <th scope="col">semes</th>
+        </tr>
+        <th scope="row">{{cr.fathername}}</th>
+        <th scope="row">{{cr.enrollmentno}}</th>
+        <td>{{cr.datob}}</td>
+        <td>{{cr.rollno}}</td>
+        <td>{{cr.branch}}</td>
+        <td>{{cr.semes}}</td>
+        <tr>
+            <th scope="col">Paper code 1</th>
+            <th scope="col">Paper code 2</th>
+            <th scope="col">Paper code 3</th>
+            <th scope="col">Paper code 4</th>
+            <th scope="col">Paper code 5</th>
+            <th scope="col">Paper code 6</th>
+            <th scope="col">Paper code 7</th>
+            <th scope="col">Paper code 8</th>
+            <th scope="col">Paper code 9</th>
+            <th scope="col">Paper code 10</th>
+            <th scope="col">Paper code 11</th>
+            <th scope="col">Paper code 12</th>
+            <th scope="col">Paper code 13</th>
+            <th scope="col">Paper code 14</th>
+            <th scope="col">Paper code 15</th>
+            </tr>
+            <tr>
+            <th scope="col">Paper title 1</th>
+            <th scope="col">Paper title 2</th>
+            <th scope="col">Paper title 3</th>
+            <th scope="col">Paper title 4</th>
+            <th scope="col">Paper title 5</th>
+            <th scope="col">Paper title 6</th>
+            <th scope="col">Paper title 7</th>
+            <th scope="col">Paper title 8</th>
+            <th scope="col">Paper title 9</th>
+            <th scope="col">Paper title 10</th>
+            <th scope="col">Paper title 11</th>
+            <th scope="col">Paper title 12</th>
+            <th scope="col">Paper title 13</th>
+            <th scope="col">Paper title 14</th>
+            <th scope="col">Paper title 15</th>
+        </tr>
+
+
+            
+
+
+
+    </tr>
+</thead>
+<br>
+<hr>
+<tbody>
+   
+    {% for cr in coursean %}
+    <tr>
+        <h1 style="color: red; text-align:center;">{{semes}}</h1>
+            <td>{{cr.studname}}</td>
+
+            <th scope="row">{{cr.fathername}}</th>
+            <th scope="row">{{cr.enrollmentno}}</th>
+            <td>{{cr.datob}}</td>
+            <td>{{cr.rollno}}</td>
+            <td>{{cr.branch}}</td>
+            <td>{{cr.semes}}</td>
+            <td>{{cr.pc1}}</td>
+            <td>{{cr.pc2}}</td>
+            <td>{{cr.pc3}}</td>
+            <td>{{cr.pc4}}</td>
+            <td>{{cr.pc5}}</td>
+            <td>{{cr.pc6}}</td>
+            <td>{{cr.pc7}}</td>
+            <td>{{cr.pc8}}</td>
+            <td>{{cr.pc9}}</td>
+            <td>{{cr.pc10}}</td>
+            <td>{{cr.pc11}}</td>
+            <td>{{cr.pc12}}</td>
+            <td>{{cr.pc13}}</td>
+            <td>{{cr.pc14}}</td>
+            <td>{{cr.pc15}}</td>
+            <td>{{cr.pt1}}</td>
+            <td>{{cr.pt2}}</td>
+            <td>{{cr.pt3}}</td>
+            <td>{{cr.pt4}}</td>
+            <td>{{cr.pt5}}</td>
+            <td>{{cr.pt6}}</td>
+            <td>{{cr.pt7}}</td>
+            <td>{{cr.pt8}}</td>
+            <td>{{cr.pt9}}</td>
+            <td>{{cr.pt10}}</td>
+            <td>{{cr.pt11}}</td>
+            <td>{{cr.pt12}}</td>
+            <td>{{cr.pt13}}</td>
+            <td>{{cr.pt4}}</td>
+            <td>{{cr.pt15}}</td>
+            
+
+
+        
+
+
+    </tr>
+    {% endfor %}
+</tbody>  
+</table>
+</div>
+
+<br>
+
+<table width="50%">
+    <div class="container-fluid my-3">
+        <a href="{% url 'add_timetable' %}" class="btn btn-warning">Add Timetable</a>
+    </div>
+    
+    <thead>
+        <tr>
+            <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Timetable</td>
+         </tr>
+        
+        <tr>
+            <h1 style="color: red; font-style: inherit; text-align: center;">Semester</h1><hr>
+                <th scope="col">Branch</th>
+                <th scope="col">Semester </th>
+                <th scope="col">datob</th>
+                <th scope="col">rollno</th>
+                <th scope="col">branch</th>
+                <th scope="col">semes</th>
+                <th scope="col">Paper  1</th>
+                <th scope="col">Paper 2</th>
+                <th scope="col">Paper 3</th>
+                <th scope="col">Paper  4</th>
+                <th scope="col">Paper  5</th>
+                <th scope="col">Paper  6</th>
+                <th scope="col">Paper  7</th>
+                <th scope="col">Paper  8</th>
+                <th scope="col">Paper  9</th>
+                <th scope="col">Paper  10</th>
+                </tr>
+                <tr>
+                <th scope="col">Paper code 1</th>
+                <th scope="col">Paper code 2</th>
+                <th scope="col">Paper code 3</th>
+                <th scope="col">Paper code 4</th>
+                <th scope="col">Paper code 5</th>
+                <th scope="col">Paper code 6</th>
+                <th scope="col">Paper code 7</th>
+                <th scope="col">Paper code 8</th>
+                <th scope="col">Paper code 9</th>
+                <th scope="col">Paper code 10</th>
+            </tr>
+    
+        </tr>
+    </thead>
+    <br>
+    <hr>
+    <tbody>
+       
+        {% for tb in timetab %}
+        <tr>
+            <h1 style="color: red; text-align:center;">{{semes}}</h1>
+                <td>{{tb.course}}</td>
+                <td>{{tb.semester}}</td>
+                <td>{{tb.subj1}}</td>
+                <td>{{tb.subj2}}</td>
+                <td>{{tb.subj3}}</td>
+                <td>{{tb.subj14}}</td>
+                <td>{{tb.subj5}}</td>
+                <td>{{tb.subj6}}</td>
+                <td>{{tb.subj7}}</td>
+                <td>{{tb.subj8}}</td>
+                <td>{{tb.subj9}}</td>
+                <td>{{tb.subj10}}</td>
+                <td>{{tb.time1}}</td>
+                <td>{{tb.time2}}</td>
+                <td>{{tb.time3}}</td>
+                <td>{{tb.time4}}</td>
+                <td>{{tb.time5}}</td>
+                <td>{{tb.time6}}</td>
+                <td>{{tb.time7}}</td>
+                <td>{{tb.time8}}</td>
+                <td>{{tb.time9}}</td>
+                <td>{{tb.time10}}</td>
+    
+        </tr>
+        {% endfor %}
+    </tbody>  
+    </table>
+
+</div>
+
+<div class="container-fluid my-3">
+    <a href="{% url 'adfepayment' %}" class="btn btn-warning">Add fee</a>
+ </div>
+
+ <table class="table table-primary my-4 table-hover">
+   
+   
+    <thead>
+        <tr>
+            <td colspan = "15" style="text-align: center; font-weight: 700; font-size: x-large;">Attendance</td>
+         </tr>
+        <tr>
+            
+            <th scope="col">Issue Fee date</th>
+            <th scope="col">expire date </th>
+            <th scope="col">total</th>
+           
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in fepay %}
+        <tr>
+            <th >{{f.issuedate}}</th>
+            <th scope="row">{{f.expiredate}}</th>
+            <th scope="row">{{f.pay}}</th>
+            <td>
+
+            <a href="#" class="btn btn-small btn-danger" id='{t.id}'>Delete</a>
+
+             </td>
+       </tr>
+        {% endfor %}
+    </tbody>
+ </table>
+ <hr>
+{% endblock %}
